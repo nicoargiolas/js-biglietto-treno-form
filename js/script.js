@@ -15,22 +15,34 @@
 const ageField = document.querySelector('.age');
 const kmField = document.querySelector('.km');
 const button = document.querySelector('.btn');
+const userNameField = document.querySelector('.name');
+const userNameOut = document.getElementById('user-name');
+const offerOut = document.getElementById('offer');
+const priceOut = document.getElementById('price');
 
-const km = kmField.value;
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function(event){
+    event.preventDefault();
+    const km = kmField.value;
     let price = km * 0.21;
+    let offer = "";
     console.log(`Il prezzo del biglietto senza sconto è di ${price}`);
 
     if (ageField.value < 18) {
         price = price * 0.8;
+        offer = "Under 18";
     } else if (ageField.value > 65) {
         price = price * 0.6;
+        offer = "Over 65";
     } else {
         price = price;
+        offer = "Offerta standard";
     }
-    
     console.log(`Il prezzo finale è ${price}`);
-    
+
+    userNameOut.innerHTML = `<strong> ${userNameField.value} </strong>`;
+    offerOut.innerHTML = `<strong> OFFERTA:</strong> ${offer}`;
+    priceOut.innerHTML = `<strong> PREZZO BIGLIETTO:</strong> €${price.toFixed(2)}`
 
 })
+

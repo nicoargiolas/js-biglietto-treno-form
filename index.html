@@ -7,10 +7,30 @@
     <title>js-biglietto-treno-form</title>
 </head>
 <body>
-    <input type="text" class="age" placeholder="Inserisci la tua età">
-    <input type="text" class="km" placeholder="Inserisci i km da percorrere">
+    <div class="container">
+        <h2> CALCOLA IL PREZZO DEL TUO BIGLIETTO </h2>
+        <form action="">
+            <div class="input-areas">
+                <input type="text" class="name" placeholder="Inserisci nome e cognome">
+                <input type="number" class="age" placeholder="Inserisci la tua età">
+                <input type="number" class="km" placeholder="Inserisci i km da percorrere">
+                <button class="btn"> Calcola </button>
+            </div>
+        </form>
 
-    <button class="btn"> Calcola </button>
+        <h2> IL TUO BIGLIETTO </h2>
+        <div class="biglietto">
+            <div class="name-side">
+                <p> NOME PASSEGGERO </p>
+                <p id="user-name"></p>
+            </div>
+            <div class="details-side">
+                <p id="offer"></p>
+                <p id="price"></p>
+            </div>
+        </div>
+    </div>
+    
 
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
